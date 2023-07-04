@@ -1,0 +1,102 @@
+﻿@model IEnumerable<GunShop.Models.Weapon>
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЭкстроваGUNтный</title>
+    <link rel="stylesheet" href="~/css/Catalog.css">
+    <link rel="stylesheet" href="~/css/Common.css">
+</head>
+<body>
+    <div class="Logo">
+        <p>ЭкстроваGUNтный</p>
+    </div>
+
+    <div class="head">
+        <ul class="top-menu">
+            <li><a asp-action="Index" asp-controller="Home">Главная</a></li>
+            <li><a asp-action="Catalog" asp-controller="Home">Каталог</a></li>
+            <li><a asp-action="RegOrAut" asp-controller="Home">Личный Кабинет</a></li>
+        </ul>
+    </div>
+
+    <div class="nav">
+        <p class="importantText">Наш магазин предоставляет такие виды товаров как:</p>
+        <p>Автоматические винтовки</p>
+        <p>Полуавтоматические винтовки</p>
+        <p>Пистолеты</p>
+        <p>Пистолеты-пулеметы</p>
+        <p>Гранаты</p>
+        <p>Гранотометы</p>
+        <p>Дамское оружие</p>
+        <p>Детское оружие</p>
+        <p>Патроны ко всему ассортименту</p>
+        <p style="color: black;">Люди и бананы</p>
+    </div>
+
+    <div class="main">
+        <h1>Ассортимент</h1>
+        <ul class="top-menu-catalog">
+
+            @foreach (var weapon in Model)
+            {
+                <li>
+                    <a asp-action="Product" asp-controller="Home" asp-route-id="@weapon.IdWeapon">
+                        <div class="hover-text-one">
+                            <figure class="effect-text-four">
+                                @{
+                                    string image = weapon.ImageOfWeapon.Substring(0, weapon.ImageOfWeapon.IndexOf('$'));
+                                }
+                                <img src="@image" alt="" />
+                                <figcaption>
+                                    <h3>@weapon.NameOfWeapon</h3>
+                                    <p>@weapon.DetailsOfWeapon</p>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </a>
+                </li>
+            }
+
+
+            <li>
+                <div class="hover-text-one">
+                    <figure class="effect-text-four">
+                        <img src="../Images/smallUser.jpg" alt="" />
+                        <figcaption>
+                            <h3>Злой сука пёс</h3>
+                            <p>Кусает за морду противника и вызывает некоторый диссонанс</p>
+                        </figcaption>
+                    </figure>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="aside">
+        <p class="importantText">Блок информации о поставщиках</p>
+        <P>Но для его заполнения, нужно придумать текст</P>
+        <P>А что же сделал я в такой ситуации?</P>
+        <P>Правильно, не придумал!</P>
+        <P>
+            Поэтому анекдот:<br>
+            Родила у бабки кошка котят и, чтобы не перепутать котят, бабка одного назвала Мурзиком, а второго утопила на**р)
+        </P>
+
+    </div>
+
+    <div class="foot">
+        <p>
+            Сайт не является магазином оружия или средством распространения огнестрельного оружия.<br>
+            Это демонстрационная работа для оттачивания навыков Web-программирования.<br>
+            Но если вас всё-таки заинтересовали товары на сайте, позвоните на номер: 8 888 888 88 88
+        </p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,155 @@
+﻿
+@{
+    Layout = null;
+}
+@model GunShop.Models.LoginModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЭкстроваGUNтный</title>
+    <link rel="stylesheet" href="~/css/RegOrAut.css">
+    <link rel="stylesheet" href="~/css/Common.css">
+</head>
+<body class="bodyRegOrAut">
+
+    <div class="Logo">
+        <p><a asp-action="Profile" asp-controller="Home">ЭлеGUNтный</a></p>
+    </div>
+
+    <div class="head">
+        <ul class="top-menu">
+            <li><a asp-action="Index" asp-controller="Home">Главная</a></li>
+            <li><a asp-action="Catalog" asp-controller="Home">Каталог</a></li>
+            <li><a asp-action="RegOrAut" asp-controller="Home">Личный Кабинет</a></li>
+        </ul>
+    </div>
+
+    <div class="CommonText">
+        <hr>
+        <p>
+            Данная страница сайта представляет из
+            себя самый <b class="shopName">ЭлеGUNтный</b> способ зайти в систему
+        </p>
+    </div>
+
+    <div class="AutorizationText">
+        <hr>
+        <p>
+            Я уже являюсь продвинутым пользователем огнестрельного оружия
+            и уже имею аккаунт в системе магазина <b class="shopName">ЭкстроваGUNтный</b>
+        </p>
+    </div>
+
+    <div class="RegistrationText">
+        <hr>
+        <p>
+            Я первый раз зашел на сайт и готов предоставить личные данные
+            для регистрации в чистеме магазина <b class="shopName">ЭкстроваGUNтный</b>
+        </p>
+    </div>
+
+    <div class="fotos">
+        <img src="../Images/snake.png">
+    </div>
+    <input type="checkbox" id="side-checkbox" />
+    <form autocomplete="off" asp-action="SignIn" asp-controller="Home" class="side-panel">
+        <label class="side-button-2" for="side-checkbox">+</label>
+        <div class="side-title">Авторизация:</div>
+        <div>
+            <div class="form_grup">
+                <input asp-for="@Model.LoginUser" name="LoginUser" id="LoginUser" type="text" minlength="8" maxlength="30" autofocus="" class="form_input" placeholder=" ">
+                <label type="form_label" class="form_label">Логин</label>
+            </div>
+
+            <div class="form_grup">
+                <input asp-for="@Model.PasswordUser" name="PasswordUser" id="PasswordUser" type="password" class="form_input" placeholder=" ">
+                <label type="password" class="form_label">Пароль</label>
+            </div>
+            <button type="submit" class="form_button">Войти</button>
+        </div>
+    </form>
+    <div class="Autorization">
+        <label class="ButtonStyle" for="side-checkbox">
+            <div class="side-b">Авторизация</div>
+        </label>
+    </div>
+
+    <input type="checkbox" id="side-checkbox-Reg" />
+    <form asp-action="SingUp" asp-controller="Home" class="reg-panel">
+        <label class="side-button-reg" for="side-checkbox-Reg">+</label>
+        <div class="side-title">Регистрация:</div>
+        <div class="scroll-div">
+            <div class="form_grup">
+                <input asp-for="@Model.Nickname" class="form_input" placeholder=" ">
+                <label class="form_label">Nickname</label>
+            </div>
+
+            <div class="form_grup">
+                <input asp-for="@Model.EmailAddressUser" class="form_input" placeholder=" ">
+                <label type="form_label" class="form_label">Электронная почта</label>
+            </div>
+
+            <div class="form_grup">
+                <input asp-for="@Model.YearOfBirth" class="form_input" placeholder=" ">
+                <label type="form_label" class="form_label">Дата рождения</label>
+            </div>
+
+            <div class="form_grup">
+                <input asp-for="@Model.FirstNameUser" class="form_input" placeholder=" ">
+                <label type="form_label" class="form_label">Имя пользователя</label>
+            </div>
+
+            <div class="form_grup">
+                <input asp-for="@Model.MiddleNameUser" class="form_input" placeholder=" ">
+                <label type="form_label" class="form_label">Отчество пользователя</label>
+            </div>
+
+            <div class="form_grup">
+                <input asp-for="@Model.SecondNameUser" class="form_input" placeholder=" ">
+                <label type="form_label" class="form_label">Фамилия пользователя</label>
+            </div>
+
+            <div class="form_grup">
+                <input asp-for="@Model.WeaponPermitNumber" class="form_input" placeholder=" ">
+                <label type="form_label" class="form_label">Номер разрешения на оружие</label>
+            </div>
+
+            <div class="form_grup">
+                <input asp-for="@Model.LoginUser" type="form_input" class="form_input" placeholder=" ">
+                <label class="form_label">Логин</label>
+            </div>
+
+            <div class="form_grup">
+                <input asp-for="@Model.PasswordUser" type="password" class="form_input" placeholder=" ">
+                <label class="form_label">Пароль</label>
+            </div>
+
+            <button type="submit" class="form_button">Зарегистрироваться</button>
+        </div>
+    </form>
+    </div>
+    <div class="Registration">
+        <label class="ButtonStyle" for="side-checkbox-Reg">
+            <div class="side-b">Регистрация</div>
+        </label>
+    </div>
+
+    <div class="slides">
+        <p>Также в нашем магазине скоро появится новый вид беспилотных летательных аппаратов типа HazJI 50 - MINI</p>
+        <p><img src="../Images/BPLA Hazz-miniS.jpg"></p>
+    </div>
+
+    <div class="foot">
+        <p>
+            Сайт не является магазином оружия или средством распространения огнестрельного оружия.<br>
+            Это демонстрационная работа для оттачивания навыков Web-программирования.<br>
+            Но если вас всё-таки заинтересовали товары на сайте, позвоните на номер: 8 888 888 88 88<br>
+            (страница оценена моим другом в "6 банок кабачковой икры из 3 волшебных палочек")
+        </p>
+    </div>
+</body>
+</html>

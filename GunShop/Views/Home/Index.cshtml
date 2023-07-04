@@ -1,0 +1,76 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЭкстроваGUNтный</title>
+    <link rel="stylesheet" href="~/css/GunShop.css">
+    <link rel="stylesheet" href="~/css/Common.css">
+</head>
+<body class="bodyMain">
+    <nav>
+        <p>ЭкстроваGUNтный</p>
+    </nav>
+    <header>
+        <ul class="top-menu">
+            <li><a asp-action="Index" asp-controller="Home">Главная</a></li>
+            <li><a asp-action="Catalog" asp-controller="Home">Каталог</a></li>
+            <li><a asp-action="RegOrAut" asp-controller="Home">Личный Кабинет</a></li>
+        </ul>
+    </header>
+    <aside class="asideMain">
+        <p>
+            Вы устали от обычных драк и <b>проигрышей</b> в них?<br>
+            Вы устали ходить с утавным <b>ПМ</b>'ом?<br>
+            Может <b>пора</b> что-то менять?<br>
+            Может <b>пора переступить грань</b> между обычным оружием<br>
+            <b class="shopName">и чем-то ЭкстроваGUNтным?</b>
+        </p>
+    </aside>
+    <main class="mainMain">
+        <div>
+            <p>
+                Добро пожаловать на сайт магазина оружием <b class="shopName">"ЭкстроваGUNтный"</b> большой ассортимент оружия
+                гарантирует вам выполнение любых тактических задач в условиях боевых действий.
+            </p>
+        </div>
+        </div>
+        <p class="Users">Счастливые пользователи нашей продукции</p>
+        <div class="section">
+            <div class="section__item img-1"></div>
+            <div class="section__item img-2"></div>
+            <div class="section__item img-3"></div>
+            <div class="section__item img-4"></div>
+            <div class="section__item img-5"></div>
+            <div class="section__item img-6"></div>
+        </div>
+        </div>
+        <div>
+            <p>Стоит понять, что оружие востребовано всегда. Из века в век оно совершенствуется, из века в век оно становится безопаснее для его носителей.</p>
+            <blockquote>
+                <p>Оружие, само по себе, не предствляет опасности, опасность появляется только тогда, когда оно попадает в руки человеку.</p>
+                <cite>Виталий Veresk</cite>
+            </blockquote>
+            <p>Поэтому нет ничего плохого в нашем магазине, тем более, что мы сотрудничаем с силовыми структурами.<br> И моё любимое</p>
+            <blockquote>
+                <p>Si vis pacem, para bellum.</p>
+                <cite>Vegetius</cite>
+            </blockquote>
+        </div>
+    </main>
+    <footer>
+        <p>
+            Сайт не является магазином оружия или средством распространения огнестрельного оружия.<br>
+            Это демонстрационная работа для оттачивания навыков Web-программирования.<br>
+            Но если вас всё-таки заинтересовали товары на сайте, позвоните на номер: 8 888 888 88 88
+        </p>
+    </footer>
+</body>
+</html>

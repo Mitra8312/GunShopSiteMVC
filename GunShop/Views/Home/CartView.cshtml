@@ -1,0 +1,81 @@
+﻿@model GunShop.Models.Cart
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЭкстроваGUNтный</title>
+    <link rel="stylesheet" href="~/css/Catalog.css">
+    <link rel="stylesheet" href="~/css/Common.css">
+    <link rel="stylesheet" href="~/css/CatalogItem.css">
+</head>
+<body>
+    <div class="Logo">
+        <p>ЭкстроваGUNтный</p>
+    </div>
+
+    <div class="head">
+        <ul class="top-menu">
+            <li><a href="Main.html">Главная</a></li>
+            <li><a href="Catalog.html">Каталог</a></li>
+            <li><a href="RegistrationOrAutorization.html">Личный Кабинет</a></li>
+        </ul>
+    </div>
+
+    <div class="main" style="border-left: 2px solid white;">
+        @if (Model.CartLines.Count == 0)
+        {
+            <p style="color:white">Товаров в корзине нет</p>
+            <a asp-action="Catalog" asp-controller="Home">
+                <label class="ButtonStyle">
+                    <div class="side-b">
+                        Перейти к покупке
+                    </div>
+                </label>
+            </a>
+        }
+        else
+        {
+            @for (int i = 0; i < Model.CartLines.Count; i++)
+            {
+                <li style="border-bottom: 2px solid white;">
+                    <label>
+                        <p style="color:white" class="importantText">
+                            @Model.CartLines[i].NameOfWeapon<br>
+                            @Model.CartLines[i].DetailsOfWeapon<br>
+                            @Model.CartLines[i].PriceWeapon рублей
+                        </p>
+                    </label>
+
+                    <a href="/Home/RemoveFromCart?Number=@i">
+                        <label class="ButtonStyle">
+                            <div class="side-b">
+                                Убрать из козины
+                            </div>
+                        </label>
+                    </a>
+                </li>
+            }
+
+            <p style="color:white" class="importantText">Итоговая цена заказа: @Model.FinalPrice рублей</p>
+        }
+        <a asp-action="SendMail" asp-controller="Home">
+            <label class="ButtonStyle">
+                <div class="side-b" href="">Завершить покупку</div>
+            </label>
+        </a>
+    </div>
+
+    <div class="foot">
+        <p>
+            Сайт не является магазином оружия или средством распространения огнестрельного оружия.<br>
+            Это демонстрационная работа для оттачивания навыков Web-программирования.<br>
+            Но если вас всё-таки заинтересовали товары на сайте, позвоните на номер: 8 888 888 88 88
+        </p>
+    </div>
+</body>
+</html>

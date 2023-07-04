@@ -1,0 +1,74 @@
+﻿@{
+    Layout = null;
+}
+@model GunShop.Models.User
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЭкстроваGUNтный</title>
+    <link rel="stylesheet" href="~/css/Profile.css">
+    <link rel="stylesheet" href="~/css/Common.css">
+</head>
+<body>
+    <div class="Logo">
+        <p>ЭкстроваGUNтный</p>
+    </div>
+
+    <div class="head">
+        <ul class="top-menu">
+            <li><a asp-action="Index" asp-controller="Home">Главная</a></li>
+            <li><a asp-action="Catalog" asp-controller="Home">Каталог</a></li>
+            <li><a asp-action="RegOrAut" asp-controller="Home">Личный Кабинет</a></li>
+        </ul>
+    </div>
+
+    <div class="main">
+        <h1>Ваш личный кабинет в магазине <b class="shopName">ЭкстроваGUNтный</b></h1>
+
+        <p>NickName
+        <input disabled value="@Model.Nickname" type="text"></p>
+
+        <p>Дата рождения - может быть меньше 12, но тогда придется смотреть только детский раздел)
+        <input disabled value="@Model.YearOfBirth" type="text"></p>
+
+        <p>Email
+        <input disabled value="@Model.EmailAddressUser" type="email"></p>
+
+        <p>Логин пользователя
+        <input disabled value="@Model.LoginUser" type="text"></p>
+
+        <p>Пароль пользователя
+        <input disabled value="@Model.PasswordUser" type="password"></p>
+
+        <p>Имя пользователя
+        <input disabled value="@Model.FirstNameUser" type="text"></p>
+
+        <p>Отчество пользователя
+        <input disabled value="@Model.MiddleNameUser" type="text"></p>
+
+        <p>Фамилия пользователя
+        <input disabled value="@Model.SecondNameUser" type="text"></p>
+
+        <p>
+            Лицензия на оружие
+            <input disabled value="@Model.WeaponPermitNumber" type="text">
+        </p>
+
+        <label class="ButtonStyle">
+            <div class="side-b">Редактировать данные</div>
+        </label>
+
+    </div>
+
+    <div class="foot">
+        <p>
+            Сайт не является магазином оружия или средством распространения огнестрельного оружия.<br>
+            Это демонстрационная работа для оттачивания навыков Web-программирования.<br>
+            Но если вас всё-таки заинтересовали товары на сайте, позвоните на номер: 8 888 888 88 88
+        </p>
+    </div>
+</body>
+</html>

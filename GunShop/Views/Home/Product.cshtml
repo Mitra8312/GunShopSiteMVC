@@ -1,0 +1,64 @@
+﻿@model GunShop.Models.Weapon
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЭкстроваGUNтный</title>
+    <link rel="stylesheet" href="~/css/Catalog.css">
+    <link rel="stylesheet" href="~/css/Common.css">
+    <link rel="stylesheet" href="~/css/CatalogItem.css">
+</head>
+<body>
+    <div class="Logo">
+        <p>ЭкстроваGUNтный</p>
+    </div>
+
+    <div class="head">
+        <ul class="top-menu">
+            <li><a href="Main.html">Главная</a></li>
+            <li><a href="Catalog.html">Каталог</a></li>
+            <li><a href="RegistrationOrAutorization.html">Личный Кабинет</a></li>
+        </ul>
+    </div>
+
+    <div class="nav">
+        <p>Интереснейшая информация</p>
+    </div>
+
+    <div class="main">
+        <h1>@Model.NameOfWeapon</h1>
+        <p style="color:white;">@Model.History</p>
+        <p>@Model.ManufacturerCompany</p>
+
+    </div>
+    <div class="aside">
+        <p class="importantText"> Цена вопроса @Model.PriceWeapon рублей</p>
+        <a href="/Home/AddToCart?ID=@Model.IdWeapon">
+            <label class="ButtonStyle">
+                <div class="side-b">
+                    Купить
+                </div>
+            </label>
+        </a>
+
+        <label class="ButtonStyle">
+            <a asp-action="CartView" asp-controller="Home">
+                <div class="side-b">Перейти в козину</div>
+            </a>
+        </label>
+    </div>
+
+    <div class="foot">
+        <p>
+            Сайт не является магазином оружия или средством распространения огнестрельного оружия.<br>
+            Это демонстрационная работа для оттачивания навыков Web-программирования.<br>
+            Но если вас всё-таки заинтересовали товары на сайте, позвоните на номер: 8 888 888 88 88
+        </p>
+    </div>
+</body>
+</html>

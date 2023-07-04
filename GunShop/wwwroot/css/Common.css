@@ -1,0 +1,107 @@
+@font-face {
+    font-family: ExtroVagFont;
+    src: url(../Fonts/TriodPostnaja.ttf);
+}
+
+header a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+    header a:hover {
+        color: rgb(29, 148, 29);
+    }
+
+html {
+    font-size: 60%;
+    font-family: serif;
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+h1 {
+    font-size: 2.35em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.75em;
+}
+
+h4 {
+    font-size: 1.5em;
+}
+
+p {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding: 2% 3% 4% 3%;
+}
+
+nav {
+    align-content: center;
+    color: #f9f9f9;
+    margin-left: 20%;
+    margin-top: 5%;
+    grid-row: 1;
+    grid-column: 1 / 2;
+    font-family: ExtroVagFont;
+    font-size: 1.5em;
+}
+
+header {
+    align-content: center;
+    grid-row: 1;
+    grid-column: 2 / 4;
+    font-family: ExtroVagFont;
+    text-align: center;
+    overflow: hidden;
+}
+
+aside {
+    color: #f9f9f9;
+}
+
+main {
+    margin: 25px;
+}
+
+.top-menu li {
+    display: inline-block;
+    padding: 20px 30px;
+    margin: 0;
+    font-size: 1.8em;
+}
+
+footer {
+    grid-row: 3;
+    grid-column: 1 / 4;
+    color: #f9f9f9;
+    text-align: center;
+    border-top: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+}
+
+    footer > p {
+        padding: 10% 0;
+    }
+
+.shopName {
+    font-family: ExtroVagFont;
+}
